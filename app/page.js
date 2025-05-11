@@ -2,15 +2,20 @@ import ClientDemo from "@/components/ClientDemo";
 import DataFetchingDemo from "@/components/DataFetchingDemo";
 import RSCDemo from "@/components/RSCDemo";
 import ServerActionsDemo from "@/components/ServerActionsDemo";
+import UsePromiseDemo from "@/components/UsePromisesDemo";
+import { Suspense } from "react";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main>
-      <ClientDemo >
+      {/* <ClientDemo >
         <RSCDemo />
       </ClientDemo>
       <DataFetchingDemo />
-      <ServerActionsDemo />
+      <ServerActionsDemo /> */}
+      <Suspense fallback={<p>Loading users...</p>}>
+        <UsePromiseDemo />
+      </Suspense>
     </main>
   );
 }
